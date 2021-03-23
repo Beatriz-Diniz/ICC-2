@@ -1,0 +1,86 @@
+Exercício recursão + arquivos:
+
+1) Leia os valores N, x, y e T da entrada padrão e inicialize a semente aleatória com o valor T.
+2) Aloque dinamicamente uma matriz N x N com números aleatórios entre 0 e 255.
+3) Desenvolva uma função recursiva a qual inicia num pixel informado pelo usuário (x,y).
+3.1) O valor iniciado aleatoriamente na posição (x,y) será chamado de p.
+3.2) Faça uma busca recursiva explorando sempre os 4 vizinhos da posição atual (cima, direita, baixo, esquerda), e, caso o pixel vizinho v seja diferente de p dentro de um intervalo m, modifique o valor de v inserindo p em seu lugar.
+3.3) O valor de m é calculado desta forma: Se |p - v| <= T, v receberá o valor de p.
+4) Imprimir na saída padrão a matriz inicial seguida da matriz resultante; O formato da impressão é usando uma tabulação entre os números, ou seja: printf("%d\t", img[i][j]);
+5) Criar 2 arquivos no formato .pgm, os quais representarão respectivamente a imagem inicial (Aleatória) e a imagem final (Modificada Recursivamente). Mais detalhes da formatação deste arquivo .pgm podem ser vistos em: https://en.wikipedia.org/wiki/Netpbm
+
+Critérios de parada:
+
+Quando a borda da imagem for atingida;
+Quando não houver mais vizinhos similares, ou seja, quando m > T;
+Quando v já possuir um valor igual a p, ou seja (v == p);
+Exemplo 1:
+
+Entrada:
+    6 3 2 0
+Saída:
+    103 198 105 115 81  255
+    74  236 41  205 186 171
+    242 251 227 70  124 194
+    84  248 27  232 231 141
+    118 90  46  99  51  159
+    201 154 102 50  13  183
+
+    103 198 105 115 81  255
+    74  236 41  205 186 171
+    242 251 227 70  124 194
+    84  248 27  232 231 141
+    118 90  46  99  51  159
+    201 154 102 50  13  183
+Exemplo 2:
+
+Entrada:
+    6 3 2 147
+Saída:
+    163 154 241 50  55  188
+    68  180 111 209 105 219
+    177 192 76  76  74  255
+    127 12  252 92  191 188
+    224 14  186 78  52  31
+    28  215 186 13  9   241
+
+    163 154 241 50  55  188
+    68  180 111 209 105 219
+    177 192 76  76  74  255
+    127 12  252 92  191 188
+    224 14  252 78  52  31
+    28  252 252 13  9   241
+Exemplo 3:
+
+Entrada:
+    6 3 2 255
+Saída:
+    6 3 2 255
+    62  234 14  59  94  187
+    240 92  204 168 172 176
+    175 36  11  98  98  185
+    150 16  8   168 79  224
+    104 137 60  168 17  199
+    187 79  177 201 138 15
+
+    8   8   8   8   8   8
+    8   8   8   8   8   8
+    8   8   8   8   8   8
+    8   8   8   8   8   8
+    8   8   8   8   8   8
+    8   8   8   8   8   8
+Análise dos 3 exemplos acima:
+
+Ex1) Quando T for menor ou igual ao valor minimo (0) nenhum valor da matriz será modificado.
+Ex2) Valores intermediários são modificados de acordo com o valor de m definido acima.
+Ex3) Quando T for maior ou igual ao valor máximo (255) todos os valores da matriz serão modificados.
+Você pode utilizar o programa convert do Linux para converter a imagem PGM em JPG, ou então entre outros formatos.
+
+Digamos que queremos converter a imagem figura.pgm:
+
+Exemplo de conversão de PGM para JPG:
+    convert figura.pgm -compress none figura.jpg
+
+Exemplo de conversão de JPG para PGM:
+    convert figura.jpg -compress none figura.pgm
+Se você está utilizando Windows, você precisará de um programa como IrfanView ou ACDsee para visualizar as figuras, e precisará achar um versão do convert para Windows.

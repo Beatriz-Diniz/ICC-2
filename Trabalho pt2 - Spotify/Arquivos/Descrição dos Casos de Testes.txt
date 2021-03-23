@@ -1,0 +1,6 @@
+caso0 = ["Tiago Iorc", "Mariana Nolasco", "Ana Vitória", "Engenheiros do Hawaii", "Nenhum de Nós", "Tequila Baby"]
+caso1 = ["Cássia Eller", "Frejat", "Nando Reis", "Anitta", "MC Biel"]
+caso2 = ["Calum Scott", "Dean Lewis", "Gavin James", "James Arthur", "Lewis Capaldi", "Jada Facer", "Ed Sheeran"]
+caso3 = ["Coldplay", "Green Day", "OneRepublic", "Simple Plan", "JP Cooper"]
+caso4 = ["Europe", "The Outfield", "Scorpions", "Ney Matogrosso", "Billie Eilish"]
+caso5 = ["Anitta", "MC Biel", "MC Kevinho", "Criolo", "Kyu Sakamoto", "Fei Yu-Ching"]
